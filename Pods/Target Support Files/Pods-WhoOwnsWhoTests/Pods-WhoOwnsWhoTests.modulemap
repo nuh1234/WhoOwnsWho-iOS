@@ -1,0 +1,6 @@
+framework module Pods_WhoOwnsWhoTests {
+  umbrella header "Pods-WhoOwnsWhoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
