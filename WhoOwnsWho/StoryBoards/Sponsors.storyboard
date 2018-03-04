@@ -36,7 +36,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83B-hh-Ddo">
                                                     <rect key="frame" x="15" y="15" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.19710877539999999" green="0.2336881757" blue="0.54512667660000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -55,16 +55,24 @@
                                     <outlet property="delegate" destination="eWF-BR-zGN" id="KPT-qh-CiB"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ijw-M1-xie">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wI6-CI-U9O" firstAttribute="leading" secondItem="vkm-PL-G4i" secondAttribute="leading" constant="16" id="Dge-VW-Kkq"/>
                             <constraint firstItem="vkm-PL-G4i" firstAttribute="trailing" secondItem="wI6-CI-U9O" secondAttribute="trailing" constant="16" id="J6R-jX-jR8"/>
                             <constraint firstItem="vkm-PL-G4i" firstAttribute="bottom" secondItem="wI6-CI-U9O" secondAttribute="bottom" constant="16" id="LPn-f1-IYE"/>
+                            <constraint firstItem="wI6-CI-U9O" firstAttribute="top" secondItem="ijw-M1-xie" secondAttribute="bottom" constant="8" id="Y6s-AK-HhP"/>
+                            <constraint firstItem="ijw-M1-xie" firstAttribute="top" secondItem="5vd-RT-c4d" secondAttribute="top" id="bP5-AO-zzK"/>
+                            <constraint firstItem="ijw-M1-xie" firstAttribute="leading" secondItem="vkm-PL-G4i" secondAttribute="leading" id="qVe-6K-BnE"/>
+                            <constraint firstItem="vkm-PL-G4i" firstAttribute="trailing" secondItem="ijw-M1-xie" secondAttribute="trailing" id="zjf-iO-Xcb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vkm-PL-G4i"/>
                     </view>
                     <connections>
+                        <outlet property="repImage" destination="ijw-M1-xie" id="SoJ-SD-GTq"/>
                         <outlet property="tableView" destination="wI6-CI-U9O" id="Faz-BY-cf6"/>
                     </connections>
                 </viewController>

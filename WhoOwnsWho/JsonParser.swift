@@ -60,9 +60,12 @@ class JsonParser {
             if let data = dataArray["contributors"] as? [String : Any] {
                 if let array = data["contributor"] as? [[String : Any]] {
                     for i in array {
-                        if let sponsor = i["@attributes"] as? [String : Any] {
-                            //list.append(Sponsor(name: sponsor, totalReciepts: nil, totalIndv: nil, totalPacs: nil))
-                            print()
+                        if let single = i as? [String : Any] {
+                            if let name = single["org_name"] as? String {
+                                list.append(Sponsor(name: name, totalReciepts: nil, totalIndv: nil, totalPacs: nil))
+                                print()
+                            }
+
                         }
                     }
                 }

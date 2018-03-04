@@ -12,11 +12,14 @@ class RepViewController: UIViewController, UICollectionViewDelegate, UICollectio
     var list : [Model]?
     var location : String?
     private var index : Int = 0
-    @IBOutlet weak var stateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         if let locationLoaded = location {
-            self.stateLabel.text = locationLoaded
+            self.title = locationLoaded
+            let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.init(red: 50/255.0, green: 60/255.0, blue: 139/255.0, alpha: 1)]
+            navigationController?.navigationBar.titleTextAttributes = textAttributes
+            self.navigationController?.navigationBar.tintColor = UIColor.init(red: 50/255.0, green: 60/255.0, blue: 139/255.0, alpha: 1);
+
         }
     }
 

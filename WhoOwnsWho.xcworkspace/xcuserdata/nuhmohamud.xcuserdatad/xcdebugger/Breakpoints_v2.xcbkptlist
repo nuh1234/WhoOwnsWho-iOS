@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WhoOwnsWho/Controllers/SponsorViewController.swift"
-            timestampString = "541862821.594846"
+            filePath = "WhoOwnsWho/JsonParser.swift"
+            timestampString = "541872624.981315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "apiRequest()"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "parseSponsors(json:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

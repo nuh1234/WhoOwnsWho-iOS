@@ -11,18 +11,32 @@ import Alamofire
 
 class SponsorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var repImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var model : Model?
     var cid : String?
     var list : [Sponsor]?
+    var sponsors : [String] = ["Microsoft Corp", "Boeing Co", "Blue Cross/Blue Shield", "Berkshire Hathaway", "Intellectual Ventures LLC"]
     override func viewDidLoad() {
         super.viewDidLoad()
         if let person = self.model {
             self.cid = self.getIDForName(name: self.stringRebuild(fullName: person.name))
         }
-        
+        if let link = model?.imageLink {
+            let url = URL(string: link)
+            
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!)
+                DispatchQueue.main.async {
+                    if let loadedData = data {
+                        self.repImage.image = UIImage(data: loadedData)
+                    }
+                    
+                }
+            }
+        }
         //request
-        apiRequest()
+        //apiRequest()
         //reload table
     }
 
@@ -35,16 +49,17 @@ class SponsorViewController: UIViewController, UITableViewDataSource, UITableVie
         if let loaded = self.list {
             return loaded.count
         }
-        return 1
+        return sponsors.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sponsorCell", for: indexPath) as! SponsorTableViewCell
-        if let loaded = self.list {
-            cell.cellLabel.text = loaded[indexPath.row].name
-        }else {
-            cell.cellLabel.text = "Unknown"
-        }
+//        if let loaded = self.list {
+//            cell.cellLabel.text = loaded[indexPath.row].name
+//        }else {
+//            cell.cellLabel.text = "Unknown"
+//        }
+        cell.cellLabel.text = sponsors[indexPath.row]
         return cell
     }
     
