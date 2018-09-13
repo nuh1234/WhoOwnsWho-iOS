@@ -9,8 +9,8 @@
 import Foundation
 
 class Constants {
-    static let apiKey = "AIzaSyCR12QD4hb5wiaMHta6weSA_tuRXjsAOSE"
-    static let fundingAPIKey = "18edb035cc17d4b03c93a1601cff16ad"
+    static let apiKey = ""
+    static let fundingAPIKey = ""
     
     
     struct Representatives {
